@@ -28,34 +28,42 @@
       <div id="selects-div">
         <h2>Olá <span id="nomePrint"></span>, vamos começar seu pedido!</h2>
         <h3>Pratos</h3>
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" aria-label="Default select example" id="selectPratos">
         <option selected>Selecione seu prato</option>
-        <option value="1">Coxinha (c. catupiry)</option>
-        <option value="2">Empadão de camarão</option>
-        <option value="3">Sanduíche natural</option>
+        <option value="pao de queijo">pao de queijo</option>
+        <option value="salgados fritos">salgados fritos</option>
+        <option value="salgados assados">salgados assados</option>
         </select> 
         <h3>Bebidas</h3>
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" aria-label="Default select example" id="selectBebidas">
         <option selected>Selecione sua bebida</option>
-        <option value="1">Cafés</option>
-        <option value="2">Sucos naturais</option>
-        <option value="3">Chás</option>
+        <option value="cafes">cafes</option>
+        <option value="Sucos naturais">Sucos naturais</option>
+        <option value="achocolatado">achocolatado</option>
         </select>  
         <h3>Sobrememsas</h3>
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" aria-label="Default select example" id="selectSobremesas">
         <option selected>Selecione sua sobremesa</option>
-        <option value="1">Fatia de bolo</option>
-        <option value="2">Bombons</option>
-        <option value="3">Sonhos</option>
+        <option value="macarons">macarons</option>
+        <option value="croissant de chocolate">croissant de chocolate</option>
+        <option value="cupcake">cupcake</option>
         </select>
         <div>
             <button type="button" onclick="calcularTotal()" class="btn btn-success">Fazer pedido</button>
             <button type="button" onclick="limpar()" class="btn btn-outline-secundary">limpar</button>
         </div>  
         <div>
-            <span class="badge rounded-pill bg-primary">Total</span>
+            <span class="badge rounded-pill bg-dark">Total</span>
             <span class="badge rounded-pill bg-danger" id="resultado"></span>
-        </div>     
+        </div> 
+        <div class="pedido-pronto" id="pedido-pronto">
+            <h4>Pratos</h4>
+            <p id="pratos-pronto"></p>
+            <h4>Bebidas</h4>
+            <p id="bebidas-pronto"></p>
+            <h4>Sobremesas</h4>
+            <p id="sobremesas-pronto"></p>
+        </div>    
     </div>
 </body>
 </html>

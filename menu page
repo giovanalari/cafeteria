@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+YPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
             alt="logo"
             width="300px"
             height="auto"
-            src="../">
+            src="https://thumbs.dreamstime.com/b/cafetaria-logo-design-element-59163291.jpg">
         </div>
         <div class="wrap-p">
             <p onclick="window.location.href='../cardapio/page.html'">CARDAPIO</p>

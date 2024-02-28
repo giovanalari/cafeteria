@@ -1,50 +1,97 @@
-*{
-    margin: 0;
-    padding: 0;
+function comecar(){
+    var nome = document.getElementById("exampleFormControlInput1").value;
+     show(nome);
 }
 
-body{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2vh;
+function show(nome){
+    document.getElementById("nomePrint").textContent = nome;
+    var div = document.getElementById("selects-div");
+    if(nome && nome.trim() !== ""){
+        div.style.display = "block"
+        document.getElementById("exampleFormControlInput1").style.background = "none";
+    }
+    else{
+        document.getElementById("error").style.display = "block"
+    }
 }
 
-#selects-div{
-    display: none;
+function fechar(){
+    document.getElementById("error").style.display = "none"
+    document.getElementById("exampleFormControlInput1").style.background = "lightpink";
 }
 
-.error-modal1{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: auto;
-    min-width: 300px;
-    height: 200px;
-    padding: 20px;
-    background-color: palevioletred;
-    border-radius: 10px;
-    font-size: 1.4rem;
-    text-align: center;
-    border: 2px solid pink;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-    display: none;
+function calcularTotal(){
+    var selectPratos = document.getElementById("selectPratos");
+    var selectBebidas = document.getElementById("selectBebidas");
+    var selectSobremesas = document.getElementById("selectSobremesas");
+    var resultadoSpan = document.getElementById("resultado");
+
+
+var total = 0;
+var pratos = 0;
+var bebidas = 0;
+var sobremesas = 0;
+
+switch (selectPratos.value){
+    case "pao de queijo":
+        total += 7.50;
+        pratos = 7.90;
+    break;
+    case "salgados fritos":
+        total += 7.50;
+        pratos = 7.50;
+    break;
+    case "salgados assados":
+        total += 11.00;
+        pratos = 11.00;
+    break;
 }
 
-.error-btn{
-    color: black;
-    opacity: 0.7;
-    padding: 10px;
-    border: none;
-    border-radius: 999px;
-    width: 100%;
+switch (selectBebidas.value){
+    case "cafes":
+        total += 9.00;
+        bebidas = 9.00;
+    break;
+    case "Sucos naturais":
+        total += 10.00;
+        bebidas = 10.00;
+    break;
+    case "achocolatado":
+        total += 9.00;
+        bebidas = 9.00;
+    break;
 }
 
-.error-btn:hover{
-    opacity: 1;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+switch (selectSobremesas.value){
+    case "macarons":
+        total += 9.50;
+        sobremesas = 9.50;
+    break;
+    case "croissant de chocolate":
+        total += 11.00;
+        sobremesas = 11.00;
+    break;
+    case "cupcake":
+        total += 8.90;
+        sobremesas +=8.90;
+    break;
+}
+
+
+document.getElementById("pedido-pronto").style.display = "block"
+document.getElementById("pratos-pronto").textContent = selectPratos.value + " R$ " + pratos.toFixed(2);
+document.getElementById("bebidas-pronto").textContent = selectBebidas.value + " R$ " + bebidas.toFixed(2);
+document.getElementById("sobremesas-pronto").textContent = selectSobremesas.value + " R$ " + sobremesas.toFixed(2);
+resultadoSpan.textContent = "R$ " + total.toFixed(2);
+}
+
+
+function limpar(){
+document.getElementById("pedido-pronto").style.display = "none";
+document.getElementById("selects-div").style.display = "none";
+document.getElementById("exampleFormControlInput1").value = "";
+document.getElementById("resultado").value = "";
+document.getElementById("selectPratos").value = "Selecione seu prato";
+document.getElementById("selectBebidas").value = "Selecione sua bebida";
+document.getElementById("selectSobremesas").value = "Selecione sua sobremesa";
 }
